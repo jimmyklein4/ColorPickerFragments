@@ -30,6 +30,9 @@ public class CanvasFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_canvas, container, false);
+        if(this.getArguments()!=null) {
+            v.setBackgroundColor(Color.parseColor(this.getArguments().getString("color")));
+        }
         return v;
     }
 
@@ -43,6 +46,7 @@ public class CanvasFragment extends Fragment {
                     + " must implement OnFragmentInteractionListener");
         }
     }
+
 
     @Override
     public void onDetach() {

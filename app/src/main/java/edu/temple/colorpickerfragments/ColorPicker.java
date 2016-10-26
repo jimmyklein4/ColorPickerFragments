@@ -18,13 +18,13 @@ import java.util.List;
  * Created by jimmyklein on 9/22/16.
  */
 
-public class ColorPickerSpinner extends BaseAdapter {
+public class ColorPicker extends BaseAdapter {
 
     private String[] colors;
-    private final String TAG = "ColorPickerSpinner";
+    private final String TAG = "ColorPicker";
     private Context context;
 
-    public ColorPickerSpinner(Context context, String[] colors){
+    public ColorPicker(Context context, String[] colors){
 
         this.colors = colors;
         this.context = context;
@@ -59,7 +59,7 @@ public class ColorPickerSpinner extends BaseAdapter {
             layout.setOrientation(LinearLayout.VERTICAL);
             TextView colorTextView = new TextView(context);
             colorTextView.setText(colors[position]);
-            //colorTextView.setBackgroundColor(Color.parseColor(PaletteActivity.ACTUAL_COLORS[position]));
+            colorTextView.setBackgroundColor(Color.parseColor(colors[position]));
 
             layout.addView(colorTextView);
         }
